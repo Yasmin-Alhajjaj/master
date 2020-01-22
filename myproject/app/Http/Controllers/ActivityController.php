@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Category;
-use app\Activity;
+use App\Activity;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ActivityController extends Controller
 {
@@ -36,7 +37,92 @@ class ActivityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+        $user_id=Auth::id();
+
+        if($user_id) {
+
+           $this->validate($request, [
+            'name'  => 'required',
+            'description'  => 'required',
+            'location'  => 'required',
+            'time'  => 'required',
+            // 'timeclose'  => 'required',
+            'price'  => 'required',
+            'image'=> 'required',
+            'category_id' => 'required',
+        ]);
+
+        Activity::create([
+            'name'=> $request->input('name'),
+            'description'=> $request->input('des'),
+            'location'=> $request->input('location'),
+            'time'=> $request->input('time'),
+            'price'=> $request->input('price'),
+            'photo' => request()->image->store('uploads', 'public'),
+            'category_id'=>$request->input('category_id'),
+        ]);
+        return back()->with('success', 'success record');
+    }
+        else {
+            return back()->with('success', 'pleacse register or login');
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        $request->validate([
+            'name'  => 'required',
+            'des'  => 'required',
+            'location'  => 'required',
+            'time'  => 'required',
+            // 'timeclose'  => 'required',
+            'price'  => 'required',
+            'image'=> 'required',
+            'category_id' => 'required',
+        ]);
+
+        // $this->validate($request, [
+        //     'name'  => 'required',
+        //     'description'  => 'required',
+        //     'location'  => 'required',
+        //     'time'  => 'required',
+        //     // 'timeclose'  => 'required',
+        //     'price'  => 'required',
+        //     'image'=> 'required',
+        //     'category_id' => 'required',
+        // ]);
+
+        Activity::create([
+            'name'=> $request->input('name'),
+            'description'=> $request->input('des'),
+            'location'=> $request->input('location'),
+            'time'=> $request->input('time'),
+            'price'=> $request->input('price'),
+            'photo' => request()->image->store('uploads', 'public'),
+            'category_id'=>$request->input('category_id'),
+        ]);
+        return redirect()->route('category.index');
+
+        // catch(QueryException $e) {
+
+        // }
+        // catch($e)
+        //return view('Home.category');;
     }
 
     /**

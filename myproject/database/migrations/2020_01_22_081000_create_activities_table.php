@@ -17,10 +17,12 @@ class CreateActivitiesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->text('description');
-            $table->time('time');
+            $table->time('timeopen');
+            $table->time('timeclose');
             $table->string('location');
             $table->unsignedInteger('price');
             $table->string('photo')->nullable();
+            $table->string('license')->nullable();
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();

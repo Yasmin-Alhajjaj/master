@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use App\Activity;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
@@ -35,7 +37,23 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $user_id=Auth::id();
+
+                if($user_id) {
+
+                    comment::create([
+                            'user_id' => $user_id,
+                            'activity_id' => $request->input('activity_id'),
+                            'description' => $request->input('description')
+                        ]
+                    );
+                    return back();
+                }
+                else {
+                    return back()->with('success', 'pleacse register or login');
+                }
+
     }
 
     /**
