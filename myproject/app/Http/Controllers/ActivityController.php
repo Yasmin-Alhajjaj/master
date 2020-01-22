@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use app\Activity;
 use Illuminate\Http\Request;
 
-class EventController extends Controller
+class ActivityController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -46,6 +48,11 @@ class EventController extends Controller
     public function show($id)
     {
         //
+        $category_id=$id;
+        $find=Category::findOrFail($category_id);
+        // $activity=$find->activity()->get();
+        $activity=$find->activity()->get();
+        return view('Activities.activity',compact('activity'));
     }
 
     /**

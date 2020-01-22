@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Activity;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -46,6 +47,10 @@ class CommentController extends Controller
     public function show($id)
     {
         //
+        $activity_id=$id;
+        $activity=Activity::findOrFail($activity_id);
+        $comment=$activity->comment()->with('user')->get();
+        return view('Activities.info',compact('comment','activity'));
     }
 
     /**

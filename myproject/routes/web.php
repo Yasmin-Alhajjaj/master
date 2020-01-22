@@ -15,6 +15,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+Auth::routes();
+
+Route::get('/home', 'CategotyController@index')->name('home');
+Route::resource ('/category','CategotyController');
+Route::resource ('/activity','ActivityController');
+Route::resource ('/user','UserController');
+Route::resource ('/comment','CommentController');
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+
 Route::get('/contact-us', function () {
     return view('contact-us');
 });
@@ -23,20 +38,8 @@ Route::get('/edit_profile', function () {
     return view('Edit.edit_name');
 });
 
-Auth::routes();
-
-Route::get('/home', 'CategoryController@index')->name('home');
-Route::resource ('/category','CategoryController');
-Route::resource ('/event','EventController');
-Route::resource ('/user','UserController');
-Route::resource ('/comment','CommentController');
-
-Route::get('/profile', function () {
-    return view('profile');
-});
-
-Route::get('/{event_id}/info', 'EventController@info')->name('info');
-Route::put('/{event_id}/update_point', 'UserController@update_point')->name('update_point');
+Route::get('/{activity_id}/info', 'ActivityController@info')->name('info');
+Route::put('/{activity_id}/update_point', 'UserController@update_point')->name('update_point');
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
