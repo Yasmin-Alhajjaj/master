@@ -39,64 +39,48 @@ class ActivityController extends Controller
     {
 
 
-        $user_id=Auth::id();
+         $user_id=Auth::id();
 
-        if($user_id) {
+         if($user_id) {
 
-           $this->validate($request, [
+            $this->validate($request, [
             'name'  => 'required',
             'description'  => 'required',
             'location'  => 'required',
-            'time'  => 'required',
-            // 'timeclose'  => 'required',
+            'city'  => 'required',
+            'timeopen'  => 'required',
+            'timeclose'  => 'required',
             'price'  => 'required',
+            'phone'=>'required',
             'image'=> 'required',
             'category_id' => 'required',
         ]);
 
         Activity::create([
             'name'=> $request->input('name'),
-            'description'=> $request->input('des'),
+            'description'=> $request->input('description'),
+            'timeopen'=> $request->input('timeopen'),
+            'timeclose'=> $request->input('timeclose'),
             'location'=> $request->input('location'),
-            'time'=> $request->input('time'),
+            'city'=> $request->input('city'),
             'price'=> $request->input('price'),
+            'phone'=>$request->input('phone'),
             'photo' => request()->image->store('uploads', 'public'),
             'category_id'=>$request->input('category_id'),
+            'user_id' => $user_id,
+
         ]);
-        return back()->with('success', 'success record');
-    }
-        else {
-            return back()->with('success', 'pleacse register or login');
-        }
+         return back()->with('success', 'success record');
+     }
+         else {
+             return back()->with('notsuccess', 'pleacse register or login');
+         }
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-        $request->validate([
-            'name'  => 'required',
-            'des'  => 'required',
-            'location'  => 'required',
-            'time'  => 'required',
-            // 'timeclose'  => 'required',
-            'price'  => 'required',
-            'image'=> 'required',
-            'category_id' => 'required',
-        ]);
-
-        // $this->validate($request, [
+        // $request->validate([
         //     'name'  => 'required',
         //     'description'  => 'required',
         //     'location'  => 'required',
@@ -107,22 +91,7 @@ class ActivityController extends Controller
         //     'category_id' => 'required',
         // ]);
 
-        Activity::create([
-            'name'=> $request->input('name'),
-            'description'=> $request->input('des'),
-            'location'=> $request->input('location'),
-            'time'=> $request->input('time'),
-            'price'=> $request->input('price'),
-            'photo' => request()->image->store('uploads', 'public'),
-            'category_id'=>$request->input('category_id'),
-        ]);
-        return redirect()->route('category.index');
-
-        // catch(QueryException $e) {
-
-        // }
-        // catch($e)
-        //return view('Home.category');;
+     
     }
 
     /**
@@ -150,6 +119,8 @@ class ActivityController extends Controller
     public function edit($id)
     {
         //
+        $active=Activity::findOrFail($id);
+        return view('Edit.edit', compact('active'));
     }
 
     /**

@@ -42,7 +42,7 @@ class CommentController extends Controller
 
                 if($user_id) {
 
-                    comment::create([
+                    Comment::create([
                             'user_id' => $user_id,
                             'activity_id' => $request->input('activity_id'),
                             'description' => $request->input('description')

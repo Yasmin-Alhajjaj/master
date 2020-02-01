@@ -30,12 +30,13 @@
                             <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q={{$activity->location}}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/private-internet-access-coupon/">privateinternetaccess</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
                         </div>
                         <br>
-                        {{-- <h3 class="text-justify">activity Date : {{$activity->date}}</h3> --}}
-                        <h3 class="text-justify"> activity Time :  {{$activity->time}} </h3>
+                        <!-- {{-- <h3 class="text-justify">activity Date : {{$activity->date}}</h3> --}} -->
+                        <p class="text-justify">timeopen:  {{$activity->timeopen}} </p>
+                        <p class="text-justify">timeclose:  {{$activity->timeclose}} </p>
                         <br />
-                        {{-- <div class="btn-ground text-xs-center" style="padding-bottom: 30px">
+                        <!-- {{-- <div class="btn-ground text-xs-center" style="padding-bottom: 30px">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#productmodal1"><i class="fa fa-shopping-cart"></i> Buy Tickets</button>
-                        </div> --}}
+                        </div> --}} -->
                     </div>
                 </div>
 

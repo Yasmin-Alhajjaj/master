@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+use App\Activity;
+use App\User;
+
+
 class UserController extends Controller
 {
     /**
@@ -14,6 +19,11 @@ class UserController extends Controller
     public function index()
     {
         //
+
+        $userid=Auth::id();
+        $find=User::findOrFail($userid);
+        $activity=$find->activity()->get();
+        return view('profile',compact('activity'));
     }
 
     /**

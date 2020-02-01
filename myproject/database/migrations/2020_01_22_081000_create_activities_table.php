@@ -23,6 +23,8 @@ class CreateActivitiesTable extends Migration
             $table->unsignedInteger('price');
             $table->string('photo')->nullable();
             $table->string('license')->nullable();
+            $table->string('phone');
+            $table->boolean('active')->default(false);
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();

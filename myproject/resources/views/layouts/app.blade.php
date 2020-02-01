@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Waslni') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -46,9 +46,8 @@
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active"><a href="{{route('category.index')}}" class="nav-link">Home <span class="sr-only">(current)</span></a></li>
-                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="/contact-us" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="/about-us" class="nav-link">About</a></li>   
+                <li class="nav-item"><a href="/add" class="nav-link">Add your activity</a></li>
             </ul>
             <div class="header_extra ml-auto">
 

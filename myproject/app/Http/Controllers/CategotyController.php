@@ -41,6 +41,23 @@ class CategotyController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'name'  => 'required',
+            'description'  => 'required',
+            'image'=> 'required',
+        ]);
+
+        Category::create([
+            'name'=> $request->input('name'),
+            'description'=> $request->input('description'),
+            'photo' => request()->image->store('uploads', 'public'),
+    
+
+        ]);
+        // return back();
+         return $this->index();
+
+
     }
 
     /**

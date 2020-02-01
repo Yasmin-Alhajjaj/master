@@ -25,21 +25,32 @@ Route::resource ('/activity','ActivityController');
 Route::resource ('/user','UserController');
 Route::resource ('/comment','CommentController');
 
-Route::get('/profile', function () {
-    return view('profile');
-});
-
-
-Route::get('/contact-us', function () {
-    return view('contact-us');
-});
-
-Route::get('/edit_profile', function () {
-    return view('Edit.edit_name');
-});
 
 Route::get('/{activity_id}/info', 'ActivityController@info')->name('info');
-Route::put('/{activity_id}/update_point', 'UserController@update_point')->name('update_point');
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/add', function () {
+    return view('add');
+});
+
+Route::get('/about-us', function () {
+    return view('about-us');
+});
+
+Route::get('/profile','UserController@index');
+
+// Route::get('/profile', function () {
+//     return view('profile');
+// });
+
+
+// Route::get('/edit', function () {
+//     return view('Edit.edit');
+// });
+
+Route::get('/cat', function () {
+    return view('cat');
+});
+
+Route::get('/edit/{id}','ActivityController@edit');
