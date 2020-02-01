@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Activity extends Model
 {
     //
-    protected $fillable =['name','description','timeopen','timeclose','city','location','price','phone','photo','number','category_id','user_id'];
+    protected $fillable =['name','description','timeopen','timeclose','city','location','price','phone','photo','category_id','user_id'];
 
     public function category()
     {

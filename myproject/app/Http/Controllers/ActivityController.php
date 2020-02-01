@@ -43,18 +43,18 @@ class ActivityController extends Controller
 
          if($user_id) {
 
-            $this->validate($request, [
-            'name'  => 'required',
-            'description'  => 'required',
-            'location'  => 'required',
-            'city'  => 'required',
-            'timeopen'  => 'required',
-            'timeclose'  => 'required',
-            'price'  => 'required',
-            'phone'=>'required',
-            'image'=> 'required',
-            'category_id' => 'required',
-        ]);
+        //     $this->validate($request, [
+        //     'name'  => 'required',
+        //     'description'  => 'required',
+        //     'location'  => 'required',
+        //     'city'  => 'required',
+        //     'timeopen'  => 'required',
+        //     'timeclose'  => 'required',
+        //     'price'  => 'required',
+        //     'phone'=>'required',
+        //     'image'=> 'required',
+        //     'category_id' => 'required',
+        // ]);
 
         Activity::create([
             'name'=> $request->input('name'),
@@ -64,8 +64,8 @@ class ActivityController extends Controller
             'location'=> $request->input('location'),
             'city'=> $request->input('city'),
             'price'=> $request->input('price'),
-            'phone'=>$request->input('phone'),
             'photo' => request()->image->store('uploads', 'public'),
+            'phone'=>$request->input('phone'),
             'category_id'=>$request->input('category_id'),
             'user_id' => $user_id,
 
@@ -133,6 +133,25 @@ class ActivityController extends Controller
     public function update(Request $request, $id)
     {
         //
+$cat=$request->input('category_id');
+        Activity::findOrFail($id)
+        ->update(['name'=>$request->input('name')]);
+        Activity::findOrFail($id)
+        ->update(['description'=>$request->input('description')]);
+        Activity::findOrFail($id)
+        ->update(['location'=>$request->input('location')]);
+        Activity::findOrFail($id)
+        ->update(['phone'=>$request->input('phone')]);
+        Activity::findOrFail($id)
+        ->update(['timeopen'=>$request->input('timeopen')]);
+        Activity::findOrFail($id)
+        ->update(['timeclose'=>$request->input('timeclose')]);
+        Activity::findOrFail($id)
+        ->update(['price'=>$request->input('price')]);
+        Activity::findOrFail($id)
+        ->update(['category_id'=>$request->input('category_id')]);
+
+        return $this->show($cat);
     }
 
     /**

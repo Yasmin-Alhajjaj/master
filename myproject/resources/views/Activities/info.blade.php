@@ -12,28 +12,31 @@
         <center>   <div class="col-md-4" style="padding:15px;">
                     <div style="display:inline-block; border:solid 1px #808080; padding:15px;color: black">
                         <div>
-                            <img class="img-fluid" alt="eCommerce Product List" src="{{asset('storage').'/'.$activity->photo}}" />
+                            <img class="img-fluid" alt="non" src="{{asset('storage').'/'.$activity->photo}}" />
                             <br />
-                            @if ($activity->price ==0)
-
-                            <h2 class="float-xs-right" style="color: #2fa360" >Free activity</h2>
-                            @else
-                            <h2 class="float-xs-right" >${{$activity->price}}</h2>
-                            @endif
+                          
                             <h2>{{$activity->name}}</h2>
                             <br />
-                            <p class="text-justify">{{$activity->description}}</p>
+                            <p class=" float-xs-right">{{$activity->description}}</p>
                         </div>
                         <br />
+
+                        @if ($activity->price >0)
+                         <p class="text-justify" >the price :{{$activity->price}}</p>
+                        @endif
+
+                        <p class="text-justify">timeopen: <spam style="color:black"> {{$activity->timeopen}} </spam> </p>
+                        <p class="text-justify">timeclose: <spam style="color:black"> {{$activity->timeclose}} </spam> </p>
+                        <br />
+
+
                         <div class="ratings text-xs-center">
 
                             <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q={{$activity->location}}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/private-internet-access-coupon/">privateinternetaccess</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
                         </div>
                         <br>
                         <!-- {{-- <h3 class="text-justify">activity Date : {{$activity->date}}</h3> --}} -->
-                        <p class="text-justify">timeopen:  {{$activity->timeopen}} </p>
-                        <p class="text-justify">timeclose:  {{$activity->timeclose}} </p>
-                        <br />
+                        
                         <!-- {{-- <div class="btn-ground text-xs-center" style="padding-bottom: 30px">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#productmodal1"><i class="fa fa-shopping-cart"></i> Buy Tickets</button>
                         </div> --}} -->

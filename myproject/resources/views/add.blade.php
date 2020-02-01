@@ -57,8 +57,8 @@
             </div>
 
             <div class="form-group">
-                <label >phon number</label>
-                <input type="text" name="phon" class="form-control" >
+                <label >phone number</label>
+                <input type="text" name="phone" class="form-control" >
             </div> 
             <div class="form-group">
                 <label >time of open:</label>
@@ -95,10 +95,10 @@
                     <option value="" disabled selected>Select your category</option>
                     <option value="1">Doctors</option>
                     <option value="2">Restaurants</option>
-                    <option value="3">Hotels</option>
-                    <option value="4">Cars</option>
-                    <option value="5">Banks And Financial</option>
-                    <option value="6">Beauty</option>
+                    <option value="3">Cars</option>
+                    <option value="4">Beauty</option>
+                    <option value="5">Hotels</option>
+                    <option value="6">Banks And Financial</option>
                 </select>
                 @error('category_id')
                 <div class="alert alert-danger">{{ $message }}</div>

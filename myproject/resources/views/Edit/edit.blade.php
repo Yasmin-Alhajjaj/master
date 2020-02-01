@@ -44,7 +44,7 @@
                         <div class="card-title mb-4">
                             <div class="d-flex justify-content-start">
 
-                                <form method="POST" action="{{route('user.update',Auth::user()->id)}}">
+                                <form method="POST" action="{{route('activity.update',$active->id)}}">
                                     @method('PUT')
                                     @csrf
                                     <div class="form-group">
@@ -183,20 +183,17 @@
                                             </div>
                                             <div class="col-md-8 col-6">
                                             <select  class="form-control" id="category" name="category_id" >
-                    <option value="" disabled selected>{{$active->category_id}}</option>
+                    <option value="{$active->category_id}}" selected>{{$active->category_id}}</option>
                     <option value="1">Doctors</option>
                     <option value="2">Restaurants</option>
-                    <option value="3">Hotels</option>
-                    <option value="4">Cars</option>
-                    <option value="5">Banks And Financial</option>
-                    <option value="6">Beauty</option>
+                    <option value="3">Cars</option>
+                    <option value="4">Beauty</option>
+                    <option value="5">Hotels</option>
+                    <option value="6">Banks And Financial</option>
                 </select>
                                             </div>
 
                                         </div>
-                                        <hr/>
-
-
                                         <hr/>
 
                                     </div>

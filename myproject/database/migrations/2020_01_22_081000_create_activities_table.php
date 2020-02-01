@@ -20,6 +20,7 @@ class CreateActivitiesTable extends Migration
             $table->time('timeopen');
             $table->time('timeclose');
             $table->string('location');
+            $table->string('city');
             $table->unsignedInteger('price');
             $table->string('photo')->nullable();
             $table->string('license')->nullable();
