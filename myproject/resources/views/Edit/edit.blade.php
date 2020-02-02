@@ -59,7 +59,7 @@
                                         <a class="nav-link active" id="basicInfo-tab" data-toggle="tab"
                                            href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Edit </a>
                                     </li>
-                                 
+
                                 </ul>
                                 <div class="tab-content ml-1" id="myTabContent">
                                     <div class="tab-pane fade show active" id="basicInfo" role="tabpanel"
@@ -162,7 +162,7 @@
                                         </div>
                                         <hr/>
 
-                                        
+
 
                                         <div class="row">
                                             <div class="col-sm-3 col-md-3 col-6">
@@ -183,7 +183,7 @@
                                             </div>
                                             <div class="col-md-8 col-6">
                                             <select  class="form-control" id="category" name="category_id" >
-                    <option value="{$active->category_id}}" selected>{{$active->category_id}}</option>
+                    <option value="{$active->category_id}}" selected >{{$active->category_id}}</option>
                     <option value="1">Doctors</option>
                     <option value="2">Restaurants</option>
                     <option value="3">Cars</option>
@@ -206,7 +206,7 @@
                     </div>
 
                 </div>
-            </div>  
+            </div>
         </div>
     </div>
 

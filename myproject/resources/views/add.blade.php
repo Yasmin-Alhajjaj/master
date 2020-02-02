@@ -2,8 +2,13 @@
 
 @section('content')
 
+
+<div class="alert alert-info">
+    <strong>Info!</strong> To be able to register your activity, you must log on to the WebSite as a user.
+  </div>
+
 @if ($message = Session::get('success'))
-        <div class="alert alert-success alert-info">
+        <div class="alert alert-success ">
             <button type="button" class="close" data-dismiss="alert">×</button>
             <strong>{{ $message }}</strong>
         </div>
@@ -40,7 +45,21 @@
 
             <div class="form-group">
                 <label for="city">City</label>
-                <input type="text" class="form-control" id="city" name="city" placeholder="Enter your activity city" >
+                <select  class="form-control" id="city" name="city" >
+                    <option value="" disabled selected>Select your city</option>
+                    <option>Amman</option>
+                    <option>Zarqa</option>
+                    <option>Irbid</option>
+                    <option>Aqaba</option>
+                    <option>Mafraq</option>
+                    <option>Jerash</option>
+                    <option>Karak</option>
+                    <option>Ajloun</option>
+                    <option>Tafilah</option>
+                    <option>salt</option>
+                    <option>Madaba</option>
+                    <option>Ma'an</option>
+                </select>
                 @error('city')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -59,7 +78,7 @@
             <div class="form-group">
                 <label >phone number</label>
                 <input type="text" name="phone" class="form-control" >
-            </div> 
+            </div>
             <div class="form-group">
                 <label >time of open:</label>
                 <input type="time" name="timeopen" min="1000-01-01"
@@ -93,12 +112,10 @@
                 <label for="category">select category</label>
                 <select  class="form-control" id="category" name="category_id" >
                     <option value="" disabled selected>Select your category</option>
-                    <option value="1">Doctors</option>
-                    <option value="2">Restaurants</option>
-                    <option value="3">Cars</option>
-                    <option value="4">Beauty</option>
-                    <option value="5">Hotels</option>
-                    <option value="6">Banks And Financial</option>
+                    @foreach ($cat as $cat )
+                <option value="{{$cat->id}}">{{$cat->name}}</option>
+
+                    @endforeach
                 </select>
                 @error('category_id')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -125,7 +142,7 @@
 
 
 
-     
+
 
 
 

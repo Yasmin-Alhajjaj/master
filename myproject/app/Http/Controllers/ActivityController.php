@@ -27,6 +27,8 @@ class ActivityController extends Controller
     public function create()
     {
         //
+        $cat=Category::all();
+        return view('add',compact('cat'));
     }
 
     /**
@@ -91,7 +93,7 @@ class ActivityController extends Controller
         //     'category_id' => 'required',
         // ]);
 
-     
+
     }
 
     /**

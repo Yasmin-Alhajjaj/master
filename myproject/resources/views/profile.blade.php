@@ -48,28 +48,28 @@
 
                                 <!-- <div class="image-container">
                                     <img src="{{asset('storage').'/'.Auth::user()->user_image}}" id="imgProfile" style="width: 200px; height: 200px" class="img-thumbnail" />
-                                    <br><br><br><br><br>                     
+                                    <br><br><br><br><br>
                                     <div class="middle">
                                         <input type="file" style="display: none;" id="profilePicture" name="file" />
                                     </div>
                                 </div> -->
-                              
 
 
-                                <br><br><br><br><br>                     
-                                <br><br><br><br>                    
+
+                                <br><br><br><br><br>
+                                <br><br><br><br>
 
                                 <div class="userData ml-3">
                                     <h1 class="d-block" style="font-size: 3.5rem; font-weight: bold"><a href="javascript:void(0);"> Hello {{ Auth::user()->name }}</a></h1>
                                 </div>
-                                
+
                                 <div class="ml-auto">
                                     <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
                                 </div>
 
 
-                          
-                               
+
+
 
                             </div>
 
@@ -82,7 +82,7 @@
                                     <li class="nav-item">
                                         <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Basic Info</a>
                                     </li>
-                                    
+
 
                                 </ul>
                                 <div class="tab-content ml-1" id="myTabContent">
@@ -114,19 +114,19 @@
                                         </div>
                                         <hr />
 
-                                      
+
 
 
                                         @foreach($activity as $activities)
                 <div class="intro_item" >
 
                         <div class="intro_image"><img src="{{asset('storage').'/'.$activities->photo}}" alt=""></div>
-                        <div class="intro_body">
-                            <div class="intro_title"><a href="#">{{$activities->name}}</a></div>
+                        <div class="">
+                            <div class="intro_title"><h4>{{$activities->name}}</h4></div>
 
                         </div>
                         <hr/>
-                    
+
                     <a  style="float: right" href="/edit/{{$activities->id}}" class="btn btn-warning">Edit This</a>
 
                 </div>
@@ -134,9 +134,9 @@
 
                                         <br><br>
                                         <br><br>
-                                        
+
                                     </div>
-                                   
+
                                 </div>
                             </div>
                         </div>
@@ -148,7 +148,7 @@
             </div>
         </div>
     </div>
-    
+
 
 
 @endsection

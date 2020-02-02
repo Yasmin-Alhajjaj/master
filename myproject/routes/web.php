@@ -30,9 +30,11 @@ Route::get('/{activity_id}/info', 'ActivityController@info')->name('info');
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/add', function () {
-    return view('add');
-});
+Route::get('/add','ActivityController@create');
+
+// Route::get('/add', function () {
+//     return view('add');
+// });
 
 Route::get('/about-us', function () {
     return view('about-us');

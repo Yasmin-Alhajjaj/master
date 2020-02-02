@@ -16,10 +16,10 @@ The Waslni platform includes many commercial activities that offer many products
 doctors, engineers, lawyers, schools and charities.</h3>
 </div>
 </center>
-<br><br>
-<br><br>
+<br><br><br><br>
 <br><br><br>
-<br><br>
+<br><br><br>
+<br><br><br>
 
 </div>
 @endsection
