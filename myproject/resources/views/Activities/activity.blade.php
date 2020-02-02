@@ -4,21 +4,25 @@
 
 <br><br>
 <div class="container">
+        <form method="post" action="{{route('search')}}">
+            @csrf()
             <select  class="form-control" id="city" name="city" >
-                <option value="" disabled selected>Search in your city</option>
-                <option>Amman</option>
-                <option>Zarqa</option>
-                <option>Irbid</option>
-                <option>Aqaba</option>
-                <option>Mafraq</option>
-                <option>Jerash</option>
-                <option>Karak</option>
-                <option>Ajloun</option>
-                <option>Tafilah</option>
-                <option>salt</option>
-                <option>Madaba</option>
-                <option>Ma'an</option>
+                <option disabled selected>Search in your city</option>
+                <option value="Amman" >Amman</option>
+                <option value="Zarqa" >Zarqa</option>
+                <option value="Irbid" >Irbid</option>
+                <option value="Aqaba" >Aqaba</option>
+                <option value="Mafraq" >Mafraq</option>
+                <option value="Jerash" >Jerash</option>
+                <option value="Karak" >Karak</option>
+                <option value="Ajloun" >Ajloun</option>
+                <option value="Tafilah" >Tafilah</option>
+                <option value="salt" >salt</option>
+                <option value="Madaba" >Madaba</option>
+                <option value="Ma'an" >Ma'an</option>
             </select>
+            <button class="btn btn-primary">Search</button>
+        </form>
 </div>
             <div class="intro">
             <div class="intro_content d-flex flex-row flex-wrap align-items-start justify-content-between">

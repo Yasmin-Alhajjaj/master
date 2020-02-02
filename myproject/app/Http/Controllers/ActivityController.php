@@ -111,7 +111,14 @@ class ActivityController extends Controller
         $activity=$find->activity()->get();
         return view('Activities.activity',compact('activity'));
     }
+    public function search(Request $request)
+    {
+        $key_word = $request->city;
 
+        $activity = Activity::where('city', $key_word)->get();
+
+        return view('Activities.activity',compact('activity'));
+    }
     /**
      * Show the form for editing the specified resource.
      *
