@@ -111,6 +111,9 @@ class ActivityController extends Controller
         $activity=$find->activity()->get();
         return view('Activities.activity',compact('activity'));
     }
+
+
+
     public function search(Request $request, $id)
     {
         if($request->city=='All')
@@ -179,6 +182,10 @@ $cat=$request->input('category_id');
      */
     public function destroy($id)
     {
-        //
+        Activity::where('id', $id)->delete();
+
+        return back();
+
+
     }
 }

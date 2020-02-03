@@ -4,10 +4,12 @@
 
 <br><br>
 <div class="container">
+    {{-- $activity[0]->category_id --}}
         <form method="post" action="{{route('search',['id'=>$activity[0]->category_id] )}}">
             @csrf
             <select  class="form-control" id="city" name="city" >
-                <option  selected value="All">All</option>
+                <option  selected value="">select your city</option>
+                <option value="All">All</option>
                 <option value="Amman" >Amman</option>
                 <option value="Zarqa" >Zarqa</option>
                 <option value="Irbid" >Irbid</option>

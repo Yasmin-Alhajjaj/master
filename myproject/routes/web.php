@@ -42,7 +42,7 @@ Route::get('/about-us', function () {
     return view('about-us');
 });
 
-Route::get('/profile','UserController@index');
+Route::get('/profile','UserController@index')->name("profile");
 
 // Route::get('/profile', function () {
 //     return view('profile');
@@ -58,3 +58,4 @@ Route::get('/cat', function () {
 });
 
 Route::get('/edit/{id}','ActivityController@edit');
+Route::get('/delete/{id}','ActivityController@destroy');
