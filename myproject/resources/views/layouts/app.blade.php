@@ -36,7 +36,7 @@
     <div class="container">
         <a href="#" class="navbar-brand">
             <!-- Logo Image -->
-            <img src="https://res.cloudinary.com/mhmd/image/upload/v1557368579/logo_iqjuay.png" width="45" alt="" class="d-inline-block align-middle mr-2">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRI5fS8QzfU6L-GweLNUVZ0R3DBOaowhlu6ev8lysRu_IKwWdZf" width="60" alt="" class="d-inline-block align-middle mr-2">
             <!-- Logo Text -->
             <span class="text-uppercase font-weight-bold">Waslni</span>
         </a>
@@ -46,7 +46,7 @@
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active"><a href="{{route('category.index')}}" class="nav-link">Home <span class="sr-only">(current)</span></a></li>
-                <li class="nav-item"><a href="/about-us" class="nav-link">About</a></li>   
+                <li class="nav-item"><a href="/about-us" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="/add" class="nav-link">Add your activity</a></li>
             </ul>
             <div class="header_extra ml-auto">
