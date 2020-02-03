@@ -35,9 +35,10 @@
 
         @foreach($activity as $activities)
             <!-- Intro Item -->
+            <a href="{{route('comment.show',['id' => $activities->id])}}">
+
                 <div class="intro_item" >
                 <!-- {{--                    <a href="/{{$events->id}}/info">--}} -->
-                    <a href="{{route('comment.show',['id' => $activities->id])}}">
 
                         <div class="intro_image"><center><img src="{{asset('storage').'/'.$activities->photo}}" alt=""></center></div>
                         <div class="intro_body">
@@ -46,8 +47,9 @@
                             <div class="intro_subtitle">{{$activities->location}}</div>
 
                         </div>
-                    </a>
                 </div>
+                                    </a>
+
             @endforeach
 
         </div>

@@ -9,12 +9,12 @@
         </div>
     @endif
 
-        <center>   <div class="col-md-4" style="padding:15px;">
+        <center>   <div  class="col-md-4" style="padding:15px;">
                     <div style="display:inline-block; border:solid 1px #808080; padding:15px;color: black">
                         <div>
                             <img class="img-fluid" alt="non" src="{{asset('storage').'/'.$activity->photo}}" />
                             <br />
-                          
+
                             <h2>{{$activity->name}}</h2>
                             <br />
                             <p class=" float-xs-right">{{$activity->description}}</p>
@@ -36,7 +36,7 @@
                         </div>
                         <br>
                         <!-- {{-- <h3 class="text-justify">activity Date : {{$activity->date}}</h3> --}} -->
-                        
+
                         <!-- {{-- <div class="btn-ground text-xs-center" style="padding-bottom: 30px">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#productmodal1"><i class="fa fa-shopping-cart"></i> Buy Tickets</button>
                         </div> --}} -->
@@ -44,77 +44,13 @@
                 </div>
 
         </center>
-    </div>
-        </div>
-
-
-
-
-        <!-- you need to include the shieldui css and js assets in order for the charts to work -->
-        <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light/all.min.css" />
-        <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
-
-        <script type="text/javascript">
-            jQuery(function ($) {
-                $('#rating1').shieldRating({
-                    max: 5,
-                    step: 1,
-                    value: 3,
-                    markPreset: false
-                });
-                $('#rating2').shieldRating({
-                    max: 5,
-                    step: 1,
-                    value: 4,
-                    markPreset: false
-                });
-                $('#rating3').shieldRating({
-                    max: 5,
-                    step: 1,
-                    value: 2,
-                    markPreset: false
-                });
-                $('#rating4').shieldRating({
-                    max: 5,
-                    step: 1,
-                    value: 3,
-                    markPreset: false
-                });
-                $('#rating5').shieldRating({
-                    max: 5,
-                    step: 1,
-                    value: 4,
-                    markPreset: false
-                });
-                $('#rating6').shieldRating({
-                    max: 5,
-                    step: 1,
-                    value: 2,
-                    markPreset: false
-                });
-            });
-        </script>
-
-        <style>
-        </style>
-
-
-
 
 
 
 <style>
-    .comment-wrapper .panel-body {
-        max-height:650px;
-        overflow:auto;
-    }
-    .comment-wrapper .media-list .media img {
-        width:64px;
-        height:64px;
-        border:2px solid #e5e7e8;
-    }
+
     .comment-wrapper .media-list .media {
-        border-bottom:1px dashed #efefef;
+        border-bottom:1px dashed #dddddd;
         margin-bottom:25px;
     }
 </style>
@@ -132,9 +68,7 @@
                                     <ul class="media-list">
                                         @foreach($comment as $comments)
                                             <li class="media">
-                                                <a href="#" class="pull-left">
-                                                    <img src="{{asset('storage').'/'.$comments->user->user_image}}" alt="" class="img-circle">
-                                                </a>
+
                                                 <div class="media-body">
                                 <span class="text-muted pull-right">
                                     <small class="text-muted">{{$comments->created_at}} </small>
@@ -161,8 +95,6 @@
                 </div>
             </form>
 
-        </div>
-    </div>
 
 
 

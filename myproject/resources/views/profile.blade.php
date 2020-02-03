@@ -127,8 +127,8 @@
                         </div>
                         <hr/>
 
-                    <a  style="float: right" href="/edit/{{$activities->id}}" class="btn btn-info">Edit This</a>
-                    <a  style="float: right" href="/delete/{{$activities->id}}" class="btn btn-warning">Delete</a>
+                    <a  style="float: right" href="/edit/{{$activities->id}}" class="btn btn-info ">Edit This</a>
+                    <a  style="float: right" href="/delete/{{$activities->id}}" class="btn btn-primary">Delete</a>
 
                 </div>
             @endforeach
