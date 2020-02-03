@@ -3,12 +3,15 @@
 @section('content')
 
 <br><br>
+
+@if(!empty($activity[0]->category_id))
+
 <div class="container">
     {{-- $activity[0]->category_id --}}
         <form method="post" action="{{route('search',['id'=>$activity[0]->category_id] )}}">
             @csrf
             <select  class="form-control" id="city" name="city" >
-                <option  selected value="">select your city</option>
+                <option disabled selected value="">select your city</option>
                 <option value="All">All</option>
                 <option value="Amman" >Amman</option>
                 <option value="Zarqa" >Zarqa</option>
@@ -26,6 +29,7 @@
             <button class="btn btn-primary">Search</button>
         </form>
 </div>
+@endif
             <div class="intro">
             <div class="intro_content d-flex flex-row flex-wrap align-items-start justify-content-between">
 
