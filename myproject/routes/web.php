@@ -26,12 +26,12 @@ Route::resource ('/user','UserController');
 Route::resource ('/comment','CommentController');
 
 
-Route::get('/{activity_id}/info', 'ActivityController@info')->name('info');
+//Route::get('/{activity_id}/info', 'ActivityController@info')->name('info');
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/add','ActivityController@create');
-Route::post('/search','ActivityController@search')->name("search");
+Route::post('/search/{id}','ActivityController@search')->name("search");
 
 
 // Route::get('/add', function () {

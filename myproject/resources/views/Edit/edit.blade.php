@@ -102,9 +102,26 @@
                                                 <label style="font-weight:bold;">city</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                <input value="{{$active->city}}" type="text" name="city"
+                                                <select  class="form-control" id="city" name="city" placeholder="Edit city">
+                                                    <option value="{{$active->city}}" disabled selected>{{$active->city}}</option>
+                                                    <option>Amman</option>
+                                                    <option>Zarqa</option>
+                                                    <option>Irbid</option>
+                                                    <option>Aqaba</option>
+                                                    <option>Mafraq</option>
+                                                    <option>Jerash</option>
+                                                    <option>Karak</option>
+                                                    <option>Ajloun</option>
+                                                    <option>Tafilah</option>
+                                                    <option>salt</option>
+                                                    <option>Madaba</option>
+                                                    <option>Ma'an</option>
+                                                </select>
+
+
+                                                {{-- <input value="{{$active->city}}" type="text" name="city"
                                                        class="form-control" id="city" aria-describedby="emailHelp"
-                                                       placeholder="Edit city">
+                                                       placeholder="Edit city"> --}}
                                             </div>
 
                                         </div>
@@ -183,7 +200,7 @@
                                             </div>
                                             <div class="col-md-8 col-6">
                                             <select  class="form-control" id="category" name="category_id" >
-                    <option value="{$active->category_id}}" selected >{{$active->category_id}}</option>
+                    <option value="{{$active->category_id}}" selected >{{$active->category_id}}</option>
                     <option value="1">Doctors</option>
                     <option value="2">Restaurants</option>
                     <option value="3">Cars</option>

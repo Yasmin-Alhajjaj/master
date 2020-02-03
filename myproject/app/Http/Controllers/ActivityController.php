@@ -111,13 +111,21 @@ class ActivityController extends Controller
         $activity=$find->activity()->get();
         return view('Activities.activity',compact('activity'));
     }
-    public function search(Request $request)
+    public function search(Request $request, $id)
     {
+        if($request->city=='All')
+        {$category_id=$id;
+            $find=Category::findOrFail($category_id);
+            // $activity=$find->activity()->get();
+            $activity=$find->activity()->get();
+            return view('Activities.activity',compact('activity'));}
+
         $key_word = $request->city;
 
-        $activity = Activity::where('city', $key_word)->get();
+        $activity = Activity::where([['category_id',$id],['city', $key_word]])->get();
 
         return view('Activities.activity',compact('activity'));
+
     }
     /**
      * Show the form for editing the specified resource.
